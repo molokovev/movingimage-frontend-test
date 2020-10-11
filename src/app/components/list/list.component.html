@@ -21,7 +21,7 @@
       <td>{{ video.categoryNames.join(", ") }}</td>
       <td>{{ video.formats | highestQualityFormat }}</td>
       <td>{{ video.releaseDate | date: releaseDateDisplayFormat }}</td>
-      <td>Options</td>
+      <td><a [routerLink]="[video.id]">Edit</a></td>
     </tr>
   </tbody>
 </table>
