@@ -1,5 +1,7 @@
-<input type="text" [ngModel]="searchString" />
-<button (click)="search()">Search</button>
+<form (ngSubmit)="search()">
+  <input type="search" [formControl]="searchInput" (search)="search()" />
+  <button type="submit">Search</button>
+</form>
 
 <table>
   <thead>
@@ -13,12 +15,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let video of videos">
+    <tr *ngFor="let video of videosFiltered">
       <td>{{ video.name }}</td>
       <td>{{ video.authorName }}</td>
       <td>{{ video.categoryNames.join(", ") }}</td>
       <td>{{ video.formats | highestQualityFormat }}</td>
-      <td>{{ video.releaseDate | date: "dd.M.yyyy" }}</td>
+      <td>{{ video.releaseDate | date: releaseDateDisplayFormat }}</td>
       <td>Options</td>
     </tr>
   </tbody>
