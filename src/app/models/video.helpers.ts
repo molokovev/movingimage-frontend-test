@@ -28,4 +28,4 @@ export function stringifyVideoForSearch(vid: IVideoExtended): string {
   ]);
 }
 
-export const ReleaseDateDisplayFormat = "dd.M.yyyy";
+export const ReleaseDateDisplayFormat = "dd.MM.yyyy";
