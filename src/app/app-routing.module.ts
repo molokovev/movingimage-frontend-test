@@ -1,10 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { ListComponent } from "./components/list/list.component";
+import { VideoListResolver } from "./resolvers/video-list.resolver";
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: "",
+    pathMatch: "full",
+    component: ListComponent,
+    resolve: { videos: VideoListResolver },
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
