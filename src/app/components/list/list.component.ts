@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { IVideo } from "../../models/video.interface";
+import { IVideoExtended } from "../../models/video.interface";
 
 @Component({
   selector: "app-list",
@@ -9,11 +9,14 @@ import { IVideo } from "../../models/video.interface";
 })
 export class ListComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
-  videos?: IVideo[];
+  videos?: IVideoExtended[];
+  searchString = "";
 
   ngOnInit(): void {
-    this.route.data.subscribe((data: { videos: IVideo[] }) => {
+    this.route.data.subscribe((data: { videos: IVideoExtended[] }) => {
       this.videos = data.videos;
     });
   }
+
+  search() {}
 }

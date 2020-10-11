@@ -9,3 +9,8 @@ export interface IVideo {
   };
   releaseDate: string;
 }
+
+export interface IVideoExtended extends IVideo {
+  authorName: string;
+  categoryNames: string[];
+}

@@ -1,10 +1,25 @@
+<input type="text" [ngModel]="searchString" />
+<button (click)="search()">Search</button>
+
 <table>
-  <thead></thead>
+  <thead>
+    <tr>
+      <th>Video name</th>
+      <th>Author</th>
+      <th>Category name</th>
+      <th>Highest quality format</th>
+      <th>Release date</th>
+      <th>Options</th>
+    </tr>
+  </thead>
   <tbody>
     <tr *ngFor="let video of videos">
-      {{
-        video.name
-      }}
+      <td>{{ video.name }}</td>
+      <td>{{ video.authorName }}</td>
+      <td>{{ video.categoryNames.join(", ") }}</td>
+      <td>{{ video.formats | highestQualityFormat }}</td>
+      <td>{{ video.releaseDate | date: "dd.M.yyyy" }}</td>
+      <td>Options</td>
     </tr>
   </tbody>
 </table>
