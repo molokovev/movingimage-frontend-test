@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     private authorsService: AuthorsService
   ) {}
   ngOnInit(): void {
-    this.categoriesService.loadCategories();
-    this.authorsService.loadAuthors();
+    this.categoriesService.loadCategories$().subscribe();
+    this.authorsService.loadAuthors$().subscribe();
   }
 }
