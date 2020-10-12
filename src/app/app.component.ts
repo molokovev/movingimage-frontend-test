@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { VideosService } from "./services/videos.service";
-import { single } from "rxjs/operators";
+import { CategoriesService } from "./services/categories.service";
+import { AuthorsService } from "./services/authors.service";
 
 @Component({
   selector: "app-root",
@@ -8,8 +8,12 @@ import { single } from "rxjs/operators";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  constructor(private videosService: VideosService) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private authorsService: AuthorsService
+  ) {}
   ngOnInit(): void {
-    this.videosService.loadData().pipe(single()).subscribe();
+    this.categoriesService.loadCategories();
+    this.authorsService.loadAuthors();
   }
 }

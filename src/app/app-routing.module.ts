@@ -7,8 +7,7 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    component: ListComponent,
-    resolve: { videos: VideoListResolver },
+    component: ListComponent
   },
 ];
 
