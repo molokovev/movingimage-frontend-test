@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { ListComponent } from "./components/list/list.component";
 import { EditComponent } from "./components/edit/edit.component";
+import { VideoResolver } from "./resolvers/video.resolver";
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   {
     path: ":id",
     pathMatch: "full",
-    component: EditComponent /*resolve: { video: }*/,
+    component: EditComponent,
+    resolve: { video: VideoResolver },
   },
 ];
 

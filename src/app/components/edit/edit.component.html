@@ -1,1 +1,19 @@
-<p>edit works!</p>
+<h2>Edit video: {{ video.name }}</h2>
+
+<form (ngSubmit)="save()" [formGroup]="form">
+  <div>
+    <label>Video name <input type="text" formControlName="name" /></label>
+  </div>
+  <div>
+    <label>Video author <input type="text" formControlName="author" /></label>
+  </div>
+  <div>
+    <label
+      >Video categories <textarea formControlName="categories"></textarea>
+    </label>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+    <button (click)="cancel()">Cancel</button>
+  </div>
+</form>

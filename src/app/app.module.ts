@@ -8,6 +8,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HighestQualityFormatPipe } from "./pipes/highest-quality-format.pipe";
 import { EditComponent } from "./components/edit/edit.component";
+import { VideoResolver } from "./resolvers/video.resolver";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { EditComponent } from "./components/edit/edit.component";
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [VideoResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
